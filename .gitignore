@@ -13,3 +13,5 @@ Saved
 *.xcodeproj
 *.xcworkspace
 Build/**/FileOpenOrder/
+Files
+*_BuiltData.uasset
