@@ -15,3 +15,5 @@ Saved
 Build/**/FileOpenOrder/
 Files
 *_BuiltData.uasset
+.idea
+*.iml
