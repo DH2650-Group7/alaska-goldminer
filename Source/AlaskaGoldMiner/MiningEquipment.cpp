@@ -10,6 +10,14 @@ AMiningEquipment::AMiningEquipment()
 	PrimaryActorTick.bCanEverTick = true;
 	this->RespawnClass = this->GetClass();
 	this->Damage = 1.0f;
+
+	ConstructorHelpers::FObjectFinder<USoundWave> propellerCue(TEXT("'/Game/Sounds/Woosh'"));
+	if (propellerCue.Object) {
+		this->woosh = propellerCue.Object;
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("FAILED TO LOOKUP SOUND"))
+	}
 }
 
 // Called when the game starts or when spawned
@@ -23,4 +31,9 @@ void AMiningEquipment::BeginPlay()
 void AMiningEquipment::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+void AMiningEquipment::EquipmentDoMine_Implementation()
+{
+	UGameplayStatics::PlaySound2D(GetWorld(), woosh);
 }
