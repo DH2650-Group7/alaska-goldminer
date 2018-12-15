@@ -1,7 +1,6 @@
 Binaries
 DerivedDataCache
 Intermediate
-Saved
 .vscode
 .vs
 *.VC.db
@@ -17,3 +16,12 @@ Files
 *_BuiltData.uasset
 .idea
 *.iml
+Saved/Config
+Saved/Autosaves
+Saved/Backup
+Saved/Crashes
+Saved/Logs
+Saved/StagedBuilds
+Saved/EditorCooked
+Thumbs.db
+.DS_Store
