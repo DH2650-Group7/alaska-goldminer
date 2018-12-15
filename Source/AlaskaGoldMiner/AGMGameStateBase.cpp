@@ -16,13 +16,6 @@ AAGMGameStateBase::AAGMGameStateBase() {
 
 void AAGMGameStateBase::SpawnAndEquipItem(TSubclassOf<AMiningEquipment> ItemClass)
 {
-	TSubclassOf<AMiningEquipment> MyItemBlueprint;
-
-	ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/Items/Blueprints/BP_ItemTest.BP_ItemTest'"));
-	if (ItemBlueprint.Object) {
-		MyItemBlueprint = (UClass*)ItemBlueprint.Object->GeneratedClass;
-	}
-
 	FVector Location(0.0f, 0.0f, 0.0f);
 	FRotator Rotation(0.0f, 0.0f, 0.0f);
 	FActorSpawnParameters SpawnInfo;
@@ -60,4 +53,16 @@ void AAGMGameStateBase::AddBalance(int Dollars)
 bool AAGMGameStateBase::Owns(TSubclassOf<AMiningEquipment> Item)
 {
 	return OwnedEquipment.Contains(Item);
+}
+
+void AAGMGameStateBase::ResetInventory()
+{
+	OwnedEquipment.Empty();
+}
+
+void AAGMGameStateBase::BalanceFee()
+{
+	if (Balance == 0) return;
+
+	Balance = floor(Balance * 0.8);
 }

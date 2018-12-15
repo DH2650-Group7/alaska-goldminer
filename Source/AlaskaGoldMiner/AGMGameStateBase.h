@@ -37,6 +37,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool Owns(TSubclassOf<AMiningEquipment> Item);
 
+	UFUNCTION(BlueprintCallable)
+	void ResetInventory();
+
+	UFUNCTION(BlueprintCallable)
+	void BalanceFee();
+
 private:
 	UPROPERTY()
 	int Balance;
