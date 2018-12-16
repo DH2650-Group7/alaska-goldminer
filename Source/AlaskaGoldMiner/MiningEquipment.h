@@ -39,4 +39,7 @@ public:
 	
 	UPROPERTY(BlueprintReadWrite)
 	float Damage;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool Active;
 };
